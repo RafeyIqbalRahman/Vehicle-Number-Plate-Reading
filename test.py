@@ -21,7 +21,7 @@ gray = cv2.bilateralFilter(gray, 11, 17, 17)
 edged = cv2.Canny(gray, 170, 200)
 #cv2.imshow("4 - Canny Edges", edged)
 
-(new, cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+(cnts, heirarchy) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30] 
 NumberPlateCnt = None 
 
